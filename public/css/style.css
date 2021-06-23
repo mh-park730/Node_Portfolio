@@ -2,7 +2,7 @@
 
 /* 초기화 S */
 * { box-sizing: border-box; color: #212121; font-family: 'Noto Sans KR', sans-serif; }
-body, a, ul, li { padding: 0; margin: 0; }
+body, a, ul, li, dl, dt, dd, table, table-cell { padding: 0; margin: 0; }
 html { font-size: 12px; }
 a { text-decoration: none; color: black; }
 ul { list-style: none; }
@@ -14,6 +14,10 @@ ul { list-style: none; }
 /* 초기화 E */
 
 /* 테이블, 입력 창 공통 속성 S */
+dl { display: table; }
+dt { display: table-cell; vertical-align: middle; }
+dd { display: table-cell; vertical-align: middle; }
+
 .table_rows { border-spacing: 0; } 
 .table_rows thead th { background-color: #f8f8f8; padding: 10px; border-bottom: 1px solid #d5d5d5; }
 .table_rows thead tr:first-child th { border-top: 1px solid #d5d5d5; }

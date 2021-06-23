@@ -8,9 +8,11 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const logger = require('./lib/logger');
 const { sequelize } = require('./models');
+const { loginSession } = require('./middlewares/login_session');
 
 /** 라우터 */
 const indexRouter = require('./routes'); // 메인페이지
+const memberRouter = require('./routes/member'); // 회원 페이지
 
 dotenv.config();
 
@@ -39,11 +41,30 @@ if (process.env.NODE_ENV == 'production') {
 	app.use(morgan('dev'));
 }
 
+app.use(cookieParser(process.env.COOKIE_SECRET)); // CookieParser 미들웨어 등록
+
+/** 세션 기본 설정 */
+app.use(session({
+	resave : false,
+	saveUninitialized : true,
+	secret : process.env.COOKIE_SECRET,
+	cookie : {
+		httpOnly : true,
+		secure : false,
+	},
+	name : 'mhsession',
+}));
+
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
+app.use(express.urlencoded({ extended : false }));
+
+app.use(loginSession);
 
 /** 라우터 등록 */
 app.use("/", indexRouter); // 메인페이지
+app.use("/member", memberRouter); // 회원페이지
 
 // 없는 페이지 처리
 app.use((req, res, next) => {

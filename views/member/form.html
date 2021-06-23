@@ -1,0 +1,62 @@
+{% extends '../layout.html' %}
+
+<!-- 회원 가입, 수정 양식 -->
+{% block content %}
+<div class='layout_width'>
+	<div class='join_title' align='center'>{{ '정보수정' if isLogin else '회원가입' }}</div>
+	<form method='post' action="{{ '/mypage/myinfo' if isLogin else '/member/join' }}" target='ifrmHidden' autocomplete='off' class='join_form' align='center'>
+		<dl>
+			<dt><span class='required'>*</span>아이디</dt>
+			<dd>
+				{% if isLogin %}
+				{{ member.memId }}
+				{% else %}
+				<input type='text' name='memId'>
+				<span class='join_caution'>*6~20자, 알파벳, 숫자 최소 1개 이상 포함</span>
+				{% endif %}
+			</dd>
+		</dl>
+		{% if not isPasswordNotChange %}
+		<dl>
+			<dt><span class='required'>*</span>비밀번호</dt>
+			<dd>
+				<input type='password' name='memPw'>
+			</dd>
+			<span class='join_caution'>*6~20자, 알파벳, 숫자, 특수문자 최소 1개 이상 포함</span>
+		</dl>
+		<dl>
+			<dt><span class='required'>*</span>비밀번호 확인</dt>
+			<dd>
+				<input type='password' name='memPwRe'>
+				<span class='join_caution'>*비밀번호를 한 번 더 입력해 주세요</span>
+			</dd>
+		</dl>
+		<dl>
+			<dt><span class='required'>*</span>비밀번호 찾기 힌트</dt>
+			<dd>
+				<input type='text' name='pwHint' value='{{ member.pwHint }}'>
+			</dd>
+		</dl>
+		{% endif %}
+		<dl>
+			<dt><span class='required'>*</span>회원명</dt>
+			<dd>
+				<input type='text' name='memNm' value='{{ member.memNm }}'>
+			</dd>
+		</dl>
+		<dl>
+			<dt>이메일</dt>
+			<dd>
+				<input type='email' name='email' value='{{ member.email }}'>
+			</dd>
+		</dl>
+		<dl>
+			<dt>휴대전화번호</dt>
+			<dd>
+				<input type='text' name='cellPhone' value='{{ member.cellPhone }}'>
+			</dd>
+		</dl>
+		<input type='submit' value="{{ '정보수정' if isLogin else '회원가입' }}">
+	</form>
+</div>
+{% endblock %}

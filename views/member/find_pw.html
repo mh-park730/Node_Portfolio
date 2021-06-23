@@ -1,0 +1,23 @@
+{% extends '../layout.html' %}
+{% block content %}
+<div class='find_pw_wrap'>
+	<div class='find_pw_title' align='center'>비밀번호 찾기</div>
+	<div class='layout_width'>
+		<form method='post' action='/member/find_pw' autocomplete='off' class='find_pw_form'>
+				<div class='find_pw_id'>
+					<input type='text' name='memId' placeholder='아이디'>
+				</div>
+				<div class='find_pw_nm'>
+					<input type='text' name='memNm' placeholder='회원 이름'>
+				</div>
+				<div class='find_cell'>
+					<input type='text' name='cellPhone' placeholder='휴대 전화'>
+				</div>
+				<div class='pw_ht'>
+					<input type='text' name='pwHint' placeholder='비밀번호 힌트'>
+				</div>
+			<input type='submit' value='비밀번호 찾기' class='submit_btn'>
+		</form>
+	</div>
+</div>
+{% endblock %}

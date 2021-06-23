@@ -1,0 +1,25 @@
+{% extends '../layout.html' %}
+{% block content %}
+{% if memId %}
+<h1>아이디는 : <b>{{ memId }}</b></h1>
+<div class='links'>
+	<a href='/member/login'>로그인하기</a> / 
+	<a href='/member/find_pw'>비밀번호 찾기</a>
+</div>
+{% else %}
+<div class='find_id_wrap'>
+	<div class='find_id_title' align='center'>아이디 찾기</div>
+	<div class='layout_width'>
+		<form method='post' action='/member/find_id' autocomplete='off' class='find_id_form'>
+				<div class='find_nm'>
+					<input type='text' name='memNm' placeholder='회원 이름'>
+				</div>
+				<div class='find_cell'>
+					<input type='text' name='cellPhone' placeholder='휴대 전화'>
+				</div>
+			<input type='submit' value='아이디 찾기' class='submit_btn'>
+		</form>
+	</div>
+</div>
+{% endif %}
+{% endblock %}
