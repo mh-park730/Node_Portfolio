@@ -1,21 +1,12 @@
 /** 헤더 영역 S */
 
-/* 탑 배너 영역 S */
-.top_menu .menu_wrap { height: 10px; }
+.top_menu .menu_wrap .inner a { display: inline-block; margin-right: 1px; }
 
-.top_menu .menu_wrap .inner a {
-	display: inline-block;
-	margin-right: 1px;
-}
+.top_menu .team_emblem { margin-bottom: 10px; }
 
-.top_menu .team_emblem img {
-	height: 50px;
-}
+.top_menu .team_emblem img {	height: 50px; }
 
-.top_menu .menu_wrap .inner .team_emblem a:hover {
-	transform: scale(1.1);
-	transition: all 0.3s ease-in-out;
-}
+.top_menu .menu_wrap .inner .team_emblem a:hover {	transform: scale(1.1); transition: all 0.3s ease-in-out; }
 
 .top_menu .menu_wrap {
 	padding-top: 20px;
@@ -27,12 +18,8 @@
 	z-index: 20;
 }
 
-.top_menu .menu_wrap .inner {
-	width: 1200px;
-	margin: 0 auto;
-}
+.top_menu .menu_wrap .inner { width: 1200px; margin: 0 auto; }
 
-/* 메인 메뉴 영역 S */
 .gnb .gnb_wrap {
 	border: 1px solid #37003c;
 	border-radius: 15px;
@@ -44,15 +31,11 @@
 	line-height: 25px;
 }
 
-.gnb .gnb_wrap li {
-	display: inline-block;
-}
+.gnb .gnb_wrap li {	display: inline-block; }
 
 .gnb .gnb_wrap .bar { display: inline-block; padding: 0 30px; color: #ffffff; }
 
-.gnb .gnb_wrap li a { color: orange; }
-/* 메인 메뉴 영역 E */
-/* 탑 배너 영역 E */
+.gnb .gnb_wrap li a { color: #ffffff; }
 
 /** 헤더 영역 E */
 
@@ -71,30 +54,15 @@ footer .footer_bar {
 	margin: 0 auto 2px;
 }
 
-.footer .sitenm {
-	float: left;
-	padding-left: 20px;
-}
+.footer .sitenm { float: left; padding-left: 20px; }
 
-.footer .admin {
-	float: right;
-	padding-right: 20px;
-}
+.footer .admin { float: right; padding-right: 20px; }
 
-.footer .xi-mail-o {
-	font-size: 1.33rem;
-	position: relative;
-	top: 2px;
-}
+.footer .xi-mail-o {	font-size: 1.33rem;	position: relative; top: 2px; }
 
-.footer .admin .mail {
-	color: #37003c;
-}
+.footer .admin .mail { color: #37003c; }
 
-.footer .admin .mail:hover {
-	text-decoration: underline;
-	cursor: pointer;
-}
+.footer .admin .mail:hover { text-decoration: underline; cursor: pointer; }
 
 /* footer 영역 E */
 

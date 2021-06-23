@@ -1,7 +1,6 @@
 {
   "name": "node_portfolio",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app",
@@ -36,5 +35,9 @@
     "sequelize": "^6.6.2",
     "sequelize-cli": "^6.2.0",
     "winston": "^3.3.3"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "description": ""
 }
