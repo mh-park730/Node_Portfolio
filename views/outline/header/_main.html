@@ -4,44 +4,28 @@
 		<div class="menu_wrap">
 			<div class="inner">
 				<div class="team_emblem">
-					<!-- ?php
-						$data = [
-						'https://www.premierleague.com/',
-						'https://www.arsenal.com/',
-						'https://www.avfc.co.uk/',
-						'https://www.brightonandhovealbion.com/',
-						'https://www.burnleyfootballclub.com/',
-						'https://www.chelseafc.com/en',
-						'https://www.cpfc.co.uk/',
-						'https://www.evertonfc.com/',
-						'https://www.fulhamfc.com/',
-						'https://www.leedsunited.com/',
-						'https://www.lcfc.com/',
-						'https://www.liverpoolfc.com/',
-						'https://www.mancity.com/',
-						'https://www.manutd.com/en',
-						'https://www.nufc.co.uk/',
-						'https://www.sufc.co.uk/',
-						'https://www.southamptonfc.com/',
-						'https://www.tottenhamhotspur.com/',
-						'https://www.wba.co.uk/',
-						'https://www.whufc.com/',
-						'https://www.wolves.co.uk/',
-						];
-							
-						foreach($data as $k => $v){
-							if($k < 10){
-								$k = "0" . $k;
-							}
-							$path = siteUrl("assets/front/images/emblem0");
-							echo "
-							<a href=".$v." target='_blank'>
-								<img src='$path".$k.".png'>
-							</a>";
+					<script>
+						const teams = ['https://www.premierleague.com/', 'https://www.arsenal.com/',
+											'https://www.avfc.co.uk/', 'https://www.brightonandhovealbion.com/',
+											'https://www.burnleyfootballclub.com/', 'https://www.chelseafc.com/en',
+											'https://www.cpfc.co.uk/', 'https://www.evertonfc.com/',
+											'https://www.fulhamfc.com/', 'https://www.leedsunited.com/',
+											'https://www.lcfc.com/', 'https://www.liverpoolfc.com/',
+											'https://www.mancity.com/', 'https://www.manutd.com/en',
+											'https://www.nufc.co.uk/', 'https://www.sufc.co.uk/',
+											'https://www.southamptonfc.com/', 'https://www.tottenhamhotspur.com/',
+											'https://www.wba.co.uk/', 'https://www.whufc.com/',
+											'https://www.wolves.co.uk/'];
+
+						for (let i = 0; i < teams.length; i++) {
+							let no = (i < 10)? "0" + i:i;
+							let fnm = `emblem0${no}.png`;
+							let path = `<a><img src='/img/${fnm}'><a/>`;
+							document.write(`${path}`);
 						}
-					?>
+					</script>
 				</div>
-				-->
+				
 				<!-- 메인 메뉴 영역 S -->
 				<nav>
 					<div class="gnb">
