@@ -10,12 +10,20 @@ const logger = require('./lib/logger');
 const { sequelize } = require('./models');
 
 /** 라우터 */
+const indexRouter = require('./routes'); // 메인페이지
 
 dotenv.config();
 
 const app = express();
 
 app.set('port', process.env.PORT || 3000);
+app.set('view engine', 'html');
+nunjucks.configure('views', {
+		express : app,
+		watch : true,
+});
+
+/** 데이터베이스 연결*/
 sequelize.sync({ force : false})
 			.then(() => {
 				logger("데이터베이스 연결 성공");
@@ -31,6 +39,13 @@ if (process.env.NODE_ENV == 'production') {
 	app.use(morgan('dev'));
 }
 
+app.use(methodOverride('_method'));
+app.use(express.static(path.join(__dirname, 'public')));
+
+/** 라우터 등록 */
+app.use("/", indexRouter); // 메인페이지
+
+// 없는 페이지 처리
 app.use((req, res, next) => {
 	const error = new Error(`${req.method} ${req.url}는 없는 페이지 입니다.`);
 	error.status = 404;

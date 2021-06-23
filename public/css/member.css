@@ -1,0 +1,46 @@
+/* 회원 정보 수정, 가입 페이지 S */
+.join_wrap, .login_form { font-size: 2.5rem; margin-top: 150px; }
+.join_wrap form, .login_form form { font-size: 1.6rem; margin-top: 20px; }
+
+.join_wrap .join_form { margin-left: 335px; }
+
+.join_wrap dl { display: table; margin: 0; padding: 0; }
+.join_wrap dt { display: table-cell; vertical-align: middle; width: 150px; padding: 5px; text-align: right; }
+.join_wrap dd { display: table-cell; vertical-align: middle; padding: 10px; }
+
+.join_wrap input[type='submit'] { margin: 0; font-size: 1.4rem; height: 40px; width: 190px; border-radius: 5px; background-color: #337ab7; border: 1px solid black; color: #ffffff; letter-spacing: 2px; }
+
+.join_wrap input[type='submit']:hover { cursor: pointer; background-color: #296090; }
+
+.join_caution { color: red; font-size: 1.1rem; line-height: 50px; }
+
+.address { width: 210px; margin-top: 10px;}
+.address_sub { width: 250px; margin-left: 10px;}
+
+.btn1.search_address { border: 1px solid black; border-radius: 5px; background-color: #37003c; color: #ffffff; padding: 5px 5px; cursor: pointer; margin-left: 5px; font-size: 1.1rem; font-weight: 300; }
+
+.required { color: red; font-weight: bold; }
+
+.terms { margin: 10px 0 20px 100px; }
+#terms { border: 1px solid black; width: 535px; height: 200px; padding: 5px; }
+
+.join_form .join_btns { margin-left: 140px; }
+.join_form .join_btns2 { margin: 30px 0 0 140px; }
+
+.join_form input[type='submit'],
+.join_form .join_btns a,
+.join_form .join_btns2 a,
+.findId_btn, .findPw_btn, .changePw_btn { width: 140px; height: 40px; border: 1px solid #000000; background-color: #37003c; color: #ffffff; border-radius: 3px; cursor: pointer; letter-spacing: 1px; line-height: 37px; text-align: center; display: inline-block; }
+
+/* 아이디 찾기, 비밀번호 찾기 버튼*/
+.findId_btn, .findPw_btn { margin: 10px 0 0 15px; width: 100px; }
+
+/* 회원 정보 수정, 가입 페이지 E */
+
+/* 로그인 페이지 S */
+.login_form { margin-top: 200px; text-align: center; }
+.login_form .login { margin-bottom: 50px; }
+.login_form input[type='text'],
+.login_form input[type='password'] { width: 300px; margin-bottom: 15px;}
+.login_form input[type='submit'] { width: 70px; height: 34px; margin-top: 15px; border: 1px solid #000000; background-color: #37003c; color: #ffffff; border-radius: 3px; cursor: pointer; letter-spacing: 1px; }
+/* 로그인 페이지 E */

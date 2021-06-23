@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<link rel='stylesheet' type='text/css' href='//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css'>
+		
+		<link rel='stylesheet' type='text/css' href='/css/style.css'>
+		<link rel='stylesheet' type='text/css' href='css/outline.css'>
+		<link rel='stylesheet' type='text/css' href='/css/member.css'>
+		<link rel='stylesheet' type='text/css' href='/css/member.css'>
+		<link rel='stylesheet' type='text/css' href='/css/board.css'>
+		{% block style %}
+		{% endblock %}
+		<script src='https://unpkg.com/swiper/swiper-bundle.min.js'></script>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+		<script src='//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js'></script>
+		<script src='/js/ckeditor/ckeditor.js'</script>
+		<script src='/js/layer.js'></script>
+		<script src='/js/juso.js'</script>
+		<script src='js/common.js'></script>
+		{% block script %}
+		{% endblock %}
+		<title>Arsenalism :: Arsenal FC 팬 사이트</title>
+	</head>
+	<body>
+		<!-- aside 메뉴 영역 S -->
+		<aside>
+			<div class='aside_menu'>
+				<div class='aside_wrap'>
+					<div>
+						<a href=''>홈으로</a>
+					</div>
+				<!-- 관리자-->
+					<div>
+						<a href=''>관리자</a>
+					</div>
+				<!-- 로그인 -->
+					<div>
+						<a href=''>마이페이지</a>
+					</div>
+					<div>
+						<a href=''>로그아웃</a>
+					</div>
+				<!-- 비로그인 -->
+					<div>
+						<a href=''>회원가입</a>
+					</div>
+					<div>
+						<a href=''>로그인</a>
+					</div>
+
+				</div>
+			</div>
+		</aside>
+		<!-- aside 메뉴 영역 E -->
+		<header>
+		{% block header %}
+		{% include 'outline/header/_main.html' %}
+		{% endblock %}
+		</header>
+		
+		<main>
+		{% block content %}
+		{% endblock %}
+		</main>
+		
+		<footer>
+		{% block footer %}
+		{% include 'outline/footer/_main.html' %}
+		{% endblock %}
+		</footer>
+	</body>
+</html>
