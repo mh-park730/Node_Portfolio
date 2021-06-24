@@ -60,7 +60,7 @@ app.use(session({
 		httpOnly : true,
 		secure : false,
 	},
-	name : 'mhsession',
+	name : 'yhsession',
 }));
 
 app.use(methodOverride('_method'));
