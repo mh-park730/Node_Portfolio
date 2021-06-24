@@ -5,7 +5,7 @@
 
 .join_wrap, .find_id_wrap { margin-bottom: 250px; }
 
-.join_title, .find_id_title, .find_pw_title { font-size: 2.2rem; margin-right: 70px; }
+.join_title, .find_id_title, .find_pw_title { font-size: 2.2rem; margin: 150px 70px 0 0; }
 
 .join_form dt { width: 220px; }
 .join_form dd { padding: 10px; text-align: center; }
