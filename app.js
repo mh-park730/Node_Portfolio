@@ -10,9 +10,17 @@ const logger = require('./lib/logger');
 const { sequelize } = require('./models');
 const { loginSession } = require('./middlewares/login_session');
 
-/** 라우터 */
+/** front 라우터 */
 const indexRouter = require('./routes'); // 메인페이지
 const memberRouter = require('./routes/member'); // 회원 페이지
+const boardRouter = require('./routes/board'); // 게시판 페이지
+const fileRouter = require('./routes/file'); // 파일 업로드 페이지
+const mypageRouter = require('./routes/mypage'); // 마이페이지
+
+/** admin 라우터 */
+const adminRouter = require('./routes/admin'); // 관리자 메인페이지 
+const adminMemberRouter = require('./routes/admin/member'); // 회원관리
+const adminBoardRouter = require('./routes/admin/board'); // 게시판관리 
 
 dotenv.config();
 
@@ -62,9 +70,17 @@ app.use(express.urlencoded({ extended : false }));
 
 app.use(loginSession);
 
-/** 라우터 등록 */
+/** Front 라우터 등록 */
 app.use("/", indexRouter); // 메인페이지
 app.use("/member", memberRouter); // 회원페이지
+app.use("/board", boardRouter); // 게시판 페이지 
+app.use("/file", fileRouter); //파일 업로드 페이지 
+app.use("/mypage", mypageRouter); // 마이페이지 
+
+/** Admin 라우터 등록 */
+app.use("/admin", adminRouter); // 관리자 메인
+app.use("/admin/member", adminMemberRouter); // 회원 관리
+app.use("/admin/board", adminBoardRouter); // 게시판 관리 
 
 // 없는 페이지 처리
 app.use((req, res, next) => {
